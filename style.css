@@ -1,0 +1,318 @@
+body, p, h1, ul, li, blockquote {
+    padding: 0px;
+    margin: 0px;
+}
+
+body {
+    font-family: 'Vollkorn', Georgia, serif;
+    background: #fafbfc;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    letter-spacing: -0.005em;
+    color: rgba(0, 0, 0, .7);
+}
+
+img {
+    display: block;
+    width: 100%;
+    border-radius: 5px;
+}
+
+/* GRID GERAL */
+
+.estrutura {
+    display: grid;
+    grid-template-columns: minmax(160px, 1fr) 3fr 300px;
+    grid-template-areas: 
+        "header header header"
+        "titulo titulo titulo"
+        "beneficios beneficios beneficios"
+        "tipos tipos tipos"
+        "servicos servicos servicos"
+        "footer footer footer"
+    ;
+}
+
+@media (max-width: 1200px) {
+    .estrutura {
+        grid-template-areas: 
+            "header header header"
+            "titulo titulo titulo"
+            "beneficios beneficios beneficios"
+            "tipos tipos tipos"
+            "servicos servicos servicos"
+            "footer footer footer"
+        ;
+    }
+}
+
+@media (max-width: 760px) {
+    .estrutura {
+        grid-template-columns: 100%;
+        grid-template-areas: 
+            "header"
+            "titulo"
+            "beneficios"
+            "tipos"
+            "servicos"
+            "footer"
+        ;
+    }
+}
+
+/* HEADER */
+
+.header {
+    grid-area: header;
+    background: linear-gradient(135deg, #5473db, #000000);
+    padding: 10px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+}
+
+.header p {
+    color: white;
+    padding: 5px;
+}
+
+.header nav ul {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.header nav a {
+    display: block;
+    padding: 10px;
+    color: white;
+    font-size: 1.125em;
+    background: rgba(0, 0, 0, .5);
+    border-radius: 5px;
+    transition: 0.1s;
+}
+
+.header nav a:hover {
+    background: linear-gradient(135deg, #5473db, #000000);
+}
+
+.header li + li {
+    margin-left: 5px;
+}
+
+@media (max-width: 760px) {
+    .header {
+        grid-template-columns: auto;
+    }
+    .header nav a {
+        font-size: 1em;
+    }
+    .header li + li {
+        margin-left: 10px;
+    }
+}
+
+/* TITULO */
+
+.tituloPagina {
+    display: grid;
+    grid-area: titulo;
+    grid-template-columns: 1fr;
+    align-items: center;
+    padding: 10px;
+    font-size: 1.875em;
+    text-align: center;
+    color: #000000;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+/* BENEFICIOS */
+
+.beneficios {
+    display: grid;
+    grid-area: beneficios;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    background: linear-gradient(90deg, #5473db 1%, #000000 25%);
+    padding: 30px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    font-size: 1.175em;
+    color: white;
+    border: 0px solid #cccccc;
+}
+
+.beneficios:hover {
+    background: linear-gradient(90deg, #5473db, #000000);
+}
+
+.beneficios .subtitulo {
+    font-size: 1.675em;
+}
+
+.beneficios .descricao {
+    text-align: center;
+    align-self: flex-start;
+    border: 0px solid #cccccc;
+    font-size: 0.975em;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 0.775em;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+.flex > div {
+    display: flex;
+    align-items: stretch;
+    flex: 1 1 200px;
+    margin: 20px;
+    padding: 10px;
+    border: 0px solid #cccccc;
+}
+
+.flex > div .desc {
+    margin-left: 5px;
+    border: 0px solid #cccccc;
+} 
+
+.flex img {
+    width: 15px;
+    height: 15px;
+    transition: transform .7s ease-in-out;
+}
+
+.flex img:hover {
+    transform: rotate(360deg);
+}
+
+/* TIPOS */
+
+.tipos {
+    grid-area: tipos;
+    background: #fafbfc;
+    padding: 30px;
+    padding-bottom: 0px;
+    font-size: 1.175em;
+    border: 0px solid #cccccc;
+    margin-bottom: 10px;
+}
+
+/* SERVICOS */
+
+.servicos {
+    display: grid;
+    grid-area: servicos;
+    background: #fafbfc;
+    padding: 30px;
+    padding-top: 0px;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    font-size: 0.875em;
+    grid-gap: 30px;
+    border: 0px solid #cccccc;
+    
+}
+
+.servicos > div {
+    border: 1px solid #cccccc;
+    padding: 10px;
+    background: linear-gradient(135deg, #eeeeee, #cccccc);
+    border-radius: 5px;
+    box-shadow: 5px 5px 15px 0px rgba(44, 44, 44, 0.15);
+    transition: .1s ease-out;
+    cursor: pointer;
+}
+
+.servicos > div .item {
+    border: 1px solid #cccccc;
+    padding: 10px;
+    border-radius: 5px;
+    background: #ffffff;
+    
+}
+
+.servicos > div:hover {
+    background: linear-gradient(135deg, #ffffff, #5473db);
+}
+
+/* CONTATO */
+
+.contato {
+    display: grid;
+    grid-area: servicos;
+    background: #fafbfc;
+    padding: 30px;
+    padding-top: 0px;
+    grid-template-columns: 1fr;
+    font-size: 0.875em;
+    grid-gap: 30px;
+    border: 0px solid #cccccc;
+    margin-bottom: 120px;
+    width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+
+.contato > div {
+    border: 0px solid #cccccc;
+    padding: 10px;
+    background: linear-gradient(135deg, #eeeeee, #cccccc);
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px 0px rgba(44, 44, 44, 0.15);
+    transition: .1s ease-out;
+}
+
+.contato > div .formulario {
+    border: 0px solid #cccccc;
+    padding: 10px;
+    border-radius: 10px;
+    background: #ffffff;
+    background: #fafbfc;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.formulario p {
+    margin-top: 20px;
+}
+
+.formulario input {
+    width: 300px;
+}
+
+.formulario textarea {
+    width: 300px;
+    height: 200px;
+}
+
+/* FOOTER */
+
+.footer {
+    grid-area: footer;
+     background: linear-gradient(135deg, #5473db, #000000);
+}
+
+.footer p {
+    color: white;
+    text-align: center;
+    padding: 5px;
+}
+
